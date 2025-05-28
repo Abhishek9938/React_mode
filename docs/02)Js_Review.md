@@ -109,3 +109,5 @@ console.log( reviewsCount ?? "no data")
 
 //for this nullish opearator even if the data is zero it gives original number //only if is Nan or Undefined it shortcircuits
 ```
+
+

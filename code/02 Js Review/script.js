@@ -145,7 +145,7 @@ function getBook(id) {
 } 
 
 let books = getBooks();
-let book = getBook(2);
+let book = getBook(3);
 book
 
 
@@ -230,7 +230,7 @@ console.log(true || "pine apple") // or take the left on true
 console.log(false || "pine apple")
 
 // this or has drawback when the value is 0 is consider false
-var reviewsCount = book.reviews.librarything.reviewsCount;
+var reviewsCount = book.reviews.goodreads.reviewsCount;
 reviewsCount
 // here when the data is 0 it should show 0 but its showing no data
 
@@ -240,3 +240,14 @@ console.log( reviewsCount || "no data")
 
 console.log( reviewsCount ?? "no data")
 //for this nullish opearator even if the data is zero it gives original number //only if is Nan or Undefined it shortcircuits
+
+
+//chaining  in the properties of the javascript
+
+//this is used to check any object has certain property inside it
+
+var reviewGood = book.reviews?.goodreads?.reviewsCount
+reviewGood
+
+var reviewLibrary = book.reviews?.librarything?.ratingsCount
+reviewLibrary
