@@ -1,7 +1,7 @@
 Links to click
 
-[01)pure_react](./docs/01)pure_react)
-<br>
-[2)Js_Review](./docs/02)Js_Review)
+[01_pure_react](./docs/01_pure_react)
 
-k
+[2_Js_Review](./docs/02_Js_Review)
+
+
