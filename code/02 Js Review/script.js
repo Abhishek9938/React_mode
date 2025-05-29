@@ -251,3 +251,39 @@ reviewGood
 
 var reviewLibrary = book.reviews?.librarything?.ratingsCount
 reviewLibrary
+
+
+
+//using the map
+//map is used in array to loop over all elements n perform someoperation and give same length array
+
+const x= [1,2,3,4,5].map((a)=>a** 2)
+x 
+
+const titles = books.map((book)=> book.title)
+titles
+books
+
+const essentialbooks = books.map((book)=>{
+  //if u write multiple fields get in a books but this will act as function block
+  
+})
+
+
+const essentialBooks = books.map((book)=>{
+  //this will work
+  return {
+    "title":book.title,
+    "author":book.author
+  }
+  
+})
+essentialBooks
+
+const EssentialBooks = books.map((book)=>( {
+    "title":book.title,
+    "author":book.author
+    //instead of return we can just use the parenthesis
+  })
+)
+EssentialBooks
