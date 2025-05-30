@@ -287,3 +287,13 @@ const EssentialBooks = books.map((book)=>( {
   })
 )
 EssentialBooks
+
+
+// filter method in the arrays
+//same like map but here instead of return the value we will return the condition
+
+const longBooks = books.filter((book)=>book.pages>500)
+longBooks
+//this filter is very imp in react
+//we can also chain the filters or use and operator in the condition 
+//use can also use includes()// property to check if there is array contains one particular element
