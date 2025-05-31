@@ -294,6 +294,93 @@ EssentialBooks
 
 const longBooks = books.filter((book)=>book.pages>500)
 longBooks
-//this filter is very imp in react
+//this filter is very imp in react //  slices the array by condition
 //we can also chain the filters or use and operator in the condition 
 //use can also use includes()// property to check if there is array contains one particular element
+//includes checks if an element is in the array or not
+
+
+const adventureBooks = books.filter((book)=>book.genres.includes("adventure")).map(book=>book.title)
+adventureBooks
+
+//most powerful method array reduce method which rules them alll
+//we can use all the methods using the reduce method
+//goal of it is to reduce the entire array to just one value
+//needs 2 arguments array and a starter value
+
+const pageAllbooks = books.reduce((sum,book)=>sum+book.pages,0) //0 is the starting value of accumulator, here sum is the accumulator
+pageAllbooks
+
+
+//Array sort method 
+// to sort an array 
+const y = [2,232,432,44,42]
+const sortY = y.sort((a,b)=>a-b)//a,b are curr n next value for ascending use a-b, descending b-a => an algorithm is used inside
+sortY
+y
+
+const z =  [2,232,432,44,42]
+const sortZ = z.slice().sort((a,b)=>a-b)// here slice make a copy of the array
+sortZ
+z
+
+// if you see the both array are same
+//unlike map filter n reduce ,, this is not a fucntion method that means
+//this method modifies the original data of the array(mutation-which can change)// we can't allow that to happen in React
+
+const sortBooksPages = books.slice().sort((a,b)=>b.pages-a.pages)
+sortBooksPages
+
+
+//in react many operations should be immutable , we shouldn't change the underlying data structure
+//but we should know how to add , delete n update elements all without mutatting/changing the ds
+
+
+//1) Add a book obj to an array
+
+const newBook =  {
+    id: 6,
+    title: "Squid Game",
+    publicationDate: "1997-06-26",
+    author: "J. K. aurthor",
+    genres: ["fantasy", "adventure","thriller"],
+    hasMovieAdaptation: true,
+    pages: 434,
+    translations: {
+      spanish: "Squid Game",
+      korean: "해리 포터와 마법사의 돌",
+      bengali: "হ্যারি পটার এন্ড দ্য ফিলোসফার্স স্টোন",
+      portuguese: "Squid Game",
+    },
+    reviews: {
+      goodreads: {
+        rating: 4.47,
+        ratingsCount: 8910059,
+        reviewsCount: 140625,
+      },
+      librarything: {
+        rating: 4.29,
+        ratingsCount: 120941,
+        reviewsCount: 1960,
+      },
+    },
+  }
+
+
+  const booksAfterAdd = [...books,newBook]
+  booksAfterAdd
+
+
+  //2) delete a book from the array
+  const booksAfterDelete = booksAfterAdd.filter(book=> book.id !==3)//using the unique id i am deleting the array 
+  booksAfterDelete 
+
+  //3) updating the only one book
+
+  const booksAfterUpdate = booksAfterAdd.map(book=>book.id===1?{}:book)//here for loop n ternary operator to check condition
+  //the above condition states that if the book id is 1 -> make it empty or else remaining books stays the same
+  booksAfterUpdate
+
+
+    const booksAfterUpdateV2 = booksAfterAdd.map(book=>book.id===1?{...book,author:"abhishek"}:book)
+booksAfterUpdateV2
